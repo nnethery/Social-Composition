@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4F69841DDE3A8C00A4F7C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F4F69831DDE3A8C00A4F7C1 /* GoogleService-Info.plist */; };
 		4F95C3B01DDE1EFB00F5F907 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95C3AF1DDE1EFB00F5F907 /* AppDelegate.swift */; };
 		4F95C3B21DDE1EFB00F5F907 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95C3B11DDE1EFB00F5F907 /* ViewController.swift */; };
-		4F95C3B51DDE1EFB00F5F907 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F95C3B31DDE1EFB00F5F907 /* Main.storyboard */; };
 		4F95C3B71DDE1EFB00F5F907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F95C3B61DDE1EFB00F5F907 /* Assets.xcassets */; };
 		4F95C3BA1DDE1EFB00F5F907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F95C3B81DDE1EFB00F5F907 /* LaunchScreen.storyboard */; };
+		AF2214A5B1F7868432A7A8E8 /* Pods_MaxApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A530C89D5A48DEEF8D0C73 /* Pods_MaxApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F4F69831DDE3A8C00A4F7C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F95C3AC1DDE1EFB00F5F907 /* MaxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F95C3AF1DDE1EFB00F5F907 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F95C3B11DDE1EFB00F5F907 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4F95C3B41DDE1EFB00F5F907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F95C3B61DDE1EFB00F5F907 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F95C3B91DDE1EFB00F5F907 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F95C3BB1DDE1EFB00F5F907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EB11DA0E863BE7DF08E5416 /* Pods-MaxApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxApp/Pods-MaxApp.release.xcconfig"; sourceTree = "<group>"; };
+		B9A530C89D5A48DEEF8D0C73 /* Pods_MaxApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaxApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F972DB9458BAB5532ED8A41C /* Pods-MaxApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxApp/Pods-MaxApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2214A5B1F7868432A7A8E8 /* Pods_MaxApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41E83D44F7AEC4A31F6BC5AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9A530C89D5A48DEEF8D0C73 /* Pods_MaxApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4F95C3A31DDE1EFA00F5F907 = {
 			isa = PBXGroup;
 			children = (
 				4F95C3AE1DDE1EFB00F5F907 /* MaxApp */,
 				4F95C3AD1DDE1EFB00F5F907 /* Products */,
+				BA70DA11A2716A67826732AA /* Pods */,
+				41E83D44F7AEC4A31F6BC5AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +71,21 @@
 			children = (
 				4F95C3AF1DDE1EFB00F5F907 /* AppDelegate.swift */,
 				4F95C3B11DDE1EFB00F5F907 /* ViewController.swift */,
-				4F95C3B31DDE1EFB00F5F907 /* Main.storyboard */,
 				4F95C3B61DDE1EFB00F5F907 /* Assets.xcassets */,
 				4F95C3B81DDE1EFB00F5F907 /* LaunchScreen.storyboard */,
 				4F95C3BB1DDE1EFB00F5F907 /* Info.plist */,
+				4F4F69831DDE3A8C00A4F7C1 /* GoogleService-Info.plist */,
 			);
 			path = MaxApp;
+			sourceTree = "<group>";
+		};
+		BA70DA11A2716A67826732AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F972DB9458BAB5532ED8A41C /* Pods-MaxApp.debug.xcconfig */,
+				7EB11DA0E863BE7DF08E5416 /* Pods-MaxApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F95C3BE1DDE1EFB00F5F907 /* Build configuration list for PBXNativeTarget "MaxApp" */;
 			buildPhases = (
+				8F94DA5749E5C4FB5C310449 /* [CP] Check Pods Manifest.lock */,
 				4F95C3A81DDE1EFB00F5F907 /* Sources */,
 				4F95C3A91DDE1EFB00F5F907 /* Frameworks */,
 				4F95C3AA1DDE1EFB00F5F907 /* Resources */,
+				5A14DD286E0C2D258E792C7C /* [CP] Embed Pods Frameworks */,
+				A2DF23429B90D38C369B2F1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,11 +153,59 @@
 			files = (
 				4F95C3BA1DDE1EFB00F5F907 /* LaunchScreen.storyboard in Resources */,
 				4F95C3B71DDE1EFB00F5F907 /* Assets.xcassets in Resources */,
-				4F95C3B51DDE1EFB00F5F907 /* Main.storyboard in Resources */,
+				4F4F69841DDE3A8C00A4F7C1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A14DD286E0C2D258E792C7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxApp/Pods-MaxApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F94DA5749E5C4FB5C310449 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2DF23429B90D38C369B2F1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxApp/Pods-MaxApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F95C3A81DDE1EFB00F5F907 /* Sources */ = {
@@ -145,14 +220,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4F95C3B31DDE1EFB00F5F907 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F95C3B41DDE1EFB00F5F907 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4F95C3B81DDE1EFB00F5F907 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -257,6 +324,7 @@
 		};
 		4F95C3BF1DDE1EFB00F5F907 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F972DB9458BAB5532ED8A41C /* Pods-MaxApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S8T9KP8DYR;
@@ -270,6 +338,7 @@
 		};
 		4F95C3C01DDE1EFB00F5F907 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB11DA0E863BE7DF08E5416 /* Pods-MaxApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S8T9KP8DYR;
@@ -300,6 +369,7 @@
 				4F95C3C01DDE1EFB00F5F907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
