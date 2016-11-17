@@ -8,9 +8,12 @@
 
 import UIKit
 import Firebase
+import FacebookLogin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    
 
     var window: UIWindow?
 
@@ -24,8 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = ViewController()
         
         
+        
+        
         UIApplication.shared.statusBarStyle = .lightContent
-        //FIRApp.configure()
+        FIRApp.configure()
         return true
     }
 
