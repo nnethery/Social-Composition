@@ -59,9 +59,10 @@ class ViewController: UIViewController {
         if let accessToken = AccessToken.current {
 //            view.addSubview(activity)
 //            activity.startAnimating()
-            let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.userId!)
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
             FIRAuth.auth()?.signIn(with: credential) { (user, error) in
                 self.accessProfileData()
+                print("Success in auth")
             }
         }
     }
