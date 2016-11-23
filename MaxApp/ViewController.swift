@@ -8,8 +8,8 @@
 
 import UIKit
 import Firebase
-import FacebookLogin
-import FacebookCore
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class ViewController: UIViewController {
     
@@ -33,14 +33,6 @@ class ViewController: UIViewController {
         return label
     }()
     
-    let loginButton: LoginButton = {
-        let button = LoginButton(readPermissions: [ .publicProfile, .userFriends ])
-        button.translatesAutoresizingMaskIntoConstraints = false
-        //button.loginBehavior = .browser
-        
-        return button
-    }()
-    
     let activity: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -56,15 +48,13 @@ class ViewController: UIViewController {
         view.addSubview(container)
         setupContainer()
         
-        if let accessToken = AccessToken.current {
-//            view.addSubview(activity)
-//            activity.startAnimating()
-            let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.authenticationToken)
-            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-                self.accessProfileData()
-                print("Success in auth")
-            }
-        }
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.readPermissions = ["public_profile", "user_friends"]
+        view.addSubview(loginButton)
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        
     }
     
     func setupContainer() {
@@ -75,11 +65,6 @@ class ViewController: UIViewController {
         
         container.addSubview(titleLabel)
         setupLabel()
-        
-        container.addSubview(loginButton)
-        setupLoginButton()
-        
-        
     }
     
     func setupLabel() {
@@ -87,14 +72,25 @@ class ViewController: UIViewController {
         titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 75).isActive = true
     }
     
-    func setupLoginButton() {
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -50).isActive = true
-    }
+
     
     func accessProfileData() {
         
     }
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
+//        if let error = error {
+//            print(error.localizedDescription)
+//            return
+//        }
+//        // ...
+        print("User logged in")
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("Logged out")
+    }
+
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -105,4 +101,3 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
