@@ -11,7 +11,26 @@ import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(red:0.29, green:0.31, blue:0.34, alpha:1.00)
+        view.addSubview(container)
+        
+        
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.readPermissions = ["public_profile", "user_friends"]
+        view.addSubview(loginButton)
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        
+        setupContainer()
+        
+        accessProfileData()
+    }
     
     let container: UIView = {
         let view = UIView()
@@ -41,21 +60,6 @@ class ViewController: UIViewController {
         
         return view
     }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor(red:0.29, green:0.31, blue:0.34, alpha:1.00)
-        view.addSubview(container)
-        setupContainer()
-        
-        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
-        loginButton.readPermissions = ["public_profile", "user_friends"]
-        view.addSubview(loginButton)
-        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loginButton.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        
-    }
     
     func setupContainer() {
         container.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -72,23 +76,31 @@ class ViewController: UIViewController {
         titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 75).isActive = true
     }
     
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        let accessToken = FBSDKAccessToken.current()
+        guard let accessTokenString = accessToken?.tokenString else { return }
+        
+        let credentials = FIRFacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        FIRAuth.auth()?.signIn(with: credentials, completion: { (user, error) in
+            if error != nil {
+                print("Something went wrong with our FB user: ", error ?? "")
+                return
+            }
+            
+            print("Successfully logged in with our user: ", user ?? "")
+        })
+        
+
+        }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+            print("Logged out")
+        }
+    
 
     
     func accessProfileData() {
         
-    }
-    
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?) {
-//        if let error = error {
-//            print(error.localizedDescription)
-//            return
-//        }
-//        // ...
-        print("User logged in")
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("Logged out")
     }
 
     
