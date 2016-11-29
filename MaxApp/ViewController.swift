@@ -146,7 +146,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
