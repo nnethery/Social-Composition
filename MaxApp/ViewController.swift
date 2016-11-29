@@ -136,7 +136,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     let userID = FIRAuth.auth()?.currentUser?.uid
                     
                     // handler for when upload to Firebase is complete
-                    ref.child("users").setValue(["\(userID!)": result], withCompletionBlock: { (error, ref) in
+                    ref.child("users").child(userID!).setValue(result, withCompletionBlock: { (error, ref) in
                         self.activity.isHidden = true
                         self.activity.stopAnimating()
                         self.finishedLabel.isHidden = false
